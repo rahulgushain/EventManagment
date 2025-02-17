@@ -1,0 +1,53 @@
+/* .react-calendar__month-view__weekdays{
+    display: flex;
+    gap: 20px
+}
+.react-calendar__month-view__days{
+    display: flex;
+    gap: 20px
+} */
+ /* Increase spacing between day names (Su, Mo, Tu, etc.) and dates */
+.react-calendar__month-view__weekdays {
+    margin-bottom: 10px; /* Adjust space as needed */
+  }
+  
+  /* Increase spacing between rows of dates */
+  .react-calendar__month-view__days {
+    gap: 15px; /* Adds spacing between date cells */
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr); /* Ensures proper layout */
+  }
+  
+  /* Add padding to individual date cells */
+  .react-calendar__tile {
+    padding: 15px; /* Adjust as needed */
+  }
+
+  
+
+.react-calendar {
+    width: 529px;
+   margin: auto;
+   
+   
+}
+.colorFile {
+  background-color: var(--color-red-500); /* Future event dates */
+  border-radius: 50%;
+  color:white !important;
+}
+
+.pastEvent {
+  background-color: var(--color-yellow-500); /* Past event dates */
+  border-radius: 50%;
+}
+.react-calendar__tile--active{
+  background-color: var(--color-blue-500) !important;
+}
+
+.react-calendar button {
+  border-radius: 50%;
+}
+.react-calendar__month-view__days__day--weekend {
+  color:black;
+}
