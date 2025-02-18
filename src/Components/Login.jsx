@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { DataContext } from './Context'
 
 function Login() {
@@ -78,7 +78,10 @@ function Login() {
           type="submit">
           Login
         </button>
+        <p className='w-full text-center'>OR</p>
+        <NavLink to='/SignUp'></NavLink>
       </form>
+      
     </div>
   )
 }

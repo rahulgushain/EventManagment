@@ -8,9 +8,15 @@ function Calender() {
   const [date, setDate] = useState(new Date()); // Currently selected date
   const [selectedTasks, setSelectedTasks] = useState([]); // Stores tasks for selected date
 
+  const  token = localStorage.getItem('token')
+
   // Fetch events from MongoDB
   useEffect(() => {
-    fetch("http://localhost:3003/v2/Event")
+    fetch("http://localhost:3003/v2/Event",{
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      }})
       .then((res) => res.json())
       .then((data) => {
         console.log("Raw Event Data:", data.events); // Debugging fetched dates

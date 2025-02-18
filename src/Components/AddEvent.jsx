@@ -7,11 +7,16 @@ function AddEvent() {
   const { register, handleSubmit } = useForm();
   
   const URL = "http://localhost:3003/v2/AddEvent";
+  const  token = localStorage.getItem('token')
 
   const onSubmit = async (data) => {
     try {
       console.log(data);
-      const res = await axios.post(URL, data);
+      const res = await axios.post(URL, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        }});
       console.log(res);
       toast.success("Event added successfully!");
     } catch (error) {

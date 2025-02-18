@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
   const [events, setEvents] = useState({});
+  const  token = localStorage.getItem('token')
 
   useEffect(() => {
-    fetch("http://localhost:3003/v2/Event")
+    fetch("http://localhost:3003/v2/Event",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        }}
+    )
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data.events)) {
